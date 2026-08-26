@@ -21,7 +21,7 @@ CREATE TABLE users (
   password_hash TEXT NOT NULL,
   name TEXT NOT NULL,
   role TEXT NOT NULL CHECK (role IN ('super_admin', 'clinic_admin', 'doctor', 'customer')),
-  clinic_id UUID NULL REFERENCES clinics(id) ON DELETE SET NULL,
+  clinic_id UUID NULL REFERENCES clinics(id) ON DELETE CASCADE,
   specialization TEXT NULL,
   created_by_clinic_id UUID NULL REFERENCES clinics(id) ON DELETE SET NULL,
   created_at TIMESTAMP WITH TIME ZONE DEFAULT timezone('utc'::text, now()) NOT NULL,
