@@ -15,7 +15,7 @@ interface SupabaseApi {
     @POST("rest/v1/rpc/create_user_with_hash")
     suspend fun createUserWithHash(
         @Body request: CreateUserWithHashRequest
-    ): List<String> // Returns the UUID of the created user inside a single-element list
+    ): String
 
     @POST("rest/v1/rpc/change_password")
     suspend fun changePassword(

@@ -91,10 +91,10 @@ class RepositoryTests {
             throw Exception("28000: Invalid phone number or password")
         }
 
-        override suspend fun createUserWithHash(request: CreateUserWithHashRequest): List<String> {
+        override suspend fun createUserWithHash(request: CreateUserWithHashRequest): String {
             val id = "user-${request.p_phone}"
             registeredUsers.add(User(id, request.p_phone, request.p_name, request.p_role, request.p_clinic_id))
-            return listOf(id)
+            return id
         }
 
         override suspend fun getUsers(select: String, phoneFilter: String?, roleFilter: String?, clinicIdFilter: String?): List<User> {

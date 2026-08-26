@@ -72,7 +72,7 @@ class AuthRepository(
         clinicId: String
     ): String {
         // Call Postgres RPC to hash password and save doctor
-        val result = api.createUserWithHash(
+        val doctorId = api.createUserWithHash(
             CreateUserWithHashRequest(
                 p_phone = phone,
                 p_password = passwordPlain,
@@ -81,7 +81,6 @@ class AuthRepository(
                 p_clinic_id = clinicId
             )
         )
-        val doctorId = result.firstOrNull() ?: throw Exception("Failed to retrieve created doctor ID")
 
         // Update the doctor's specialization and created_by fields (Postgres function handles hash, direct PATCH handles meta)
         api.updateProfile(
@@ -107,7 +106,7 @@ class AuthRepository(
 
         if (existingCustomer == null) {
             // Case A: Customer doesn't exist. Create customer account + create clinic relationship
-            val result = api.createUserWithHash(
+            val newUserId = api.createUserWithHash(
                 CreateUserWithHashRequest(
                     p_phone = phone,
                     p_password = passwordPlain,
@@ -116,7 +115,6 @@ class AuthRepository(
                     p_clinic_id = null // Customers have NULL clinic_id (connected via clinic_customers)
                 )
             )
-            val newUserId = result.firstOrNull() ?: throw Exception("Failed to retrieve created customer ID")
 
             // Create relationship in clinic_customers
             api.linkClinicCustomer(
