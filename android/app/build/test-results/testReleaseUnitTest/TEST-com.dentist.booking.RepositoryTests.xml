@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.dentist.booking.RepositoryTests" tests="7" skipped="0" failures="0" errors="0" timestamp="2026-08-26T06:24:30" hostname="MSI" time="0.174">
+<testsuite name="com.dentist.booking.RepositoryTests" tests="7" skipped="0" failures="0" errors="0" timestamp="2026-08-26T06:30:54" hostname="MSI" time="0.204">
   <properties/>
-  <testcase name="testRegisterCustomer_NewUser" classname="com.dentist.booking.RepositoryTests" time="0.145"/>
-  <testcase name="testLogin_Success" classname="com.dentist.booking.RepositoryTests" time="0.012"/>
-  <testcase name="testLogin_InvalidCredentials" classname="com.dentist.booking.RepositoryTests" time="0.002"/>
-  <testcase name="testRegisterCustomer_ExistingRelation_ThrowsException" classname="com.dentist.booking.RepositoryTests" time="0.001"/>
-  <testcase name="testCreateTreatmentAndCompleteBooking" classname="com.dentist.booking.RepositoryTests" time="0.009"/>
-  <testcase name="testRegisterCustomer_ExistingUser_CreatesRelationOnly" classname="com.dentist.booking.RepositoryTests" time="0.002"/>
-  <testcase name="testAppUpdateVersionComparison" classname="com.dentist.booking.RepositoryTests" time="0.003"/>
+  <testcase name="testRegisterCustomer_NewUser" classname="com.dentist.booking.RepositoryTests" time="0.158"/>
+  <testcase name="testLogin_Success" classname="com.dentist.booking.RepositoryTests" time="0.021"/>
+  <testcase name="testLogin_InvalidCredentials" classname="com.dentist.booking.RepositoryTests" time="0.003"/>
+  <testcase name="testRegisterCustomer_ExistingRelation_ThrowsException" classname="com.dentist.booking.RepositoryTests" time="0.002"/>
+  <testcase name="testCreateTreatmentAndCompleteBooking" classname="com.dentist.booking.RepositoryTests" time="0.011"/>
+  <testcase name="testRegisterCustomer_ExistingUser_CreatesRelationOnly" classname="com.dentist.booking.RepositoryTests" time="0.003"/>
+  <testcase name="testAppUpdateVersionComparison" classname="com.dentist.booking.RepositoryTests" time="0.004"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

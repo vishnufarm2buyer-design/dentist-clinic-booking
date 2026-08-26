@@ -79,7 +79,7 @@ interface SupabaseApi {
     @DELETE("rest/v1/clinics")
     suspend fun deleteClinic(
         @Query("id") idFilter: String
-    )
+    ): retrofit2.Response<Unit>
 
 
     // --- SUBSCRIPTION LOGS TABLE ---

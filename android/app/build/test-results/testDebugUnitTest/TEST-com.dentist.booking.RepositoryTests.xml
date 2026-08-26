@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.dentist.booking.RepositoryTests" tests="7" skipped="0" failures="0" errors="0" timestamp="2026-08-26T06:24:27" hostname="MSI" time="0.227">
+<testsuite name="com.dentist.booking.RepositoryTests" tests="7" skipped="0" failures="0" errors="0" timestamp="2026-08-26T06:30:52" hostname="MSI" time="0.203">
   <properties/>
-  <testcase name="testRegisterCustomer_NewUser" classname="com.dentist.booking.RepositoryTests" time="0.184"/>
+  <testcase name="testRegisterCustomer_NewUser" classname="com.dentist.booking.RepositoryTests" time="0.162"/>
   <testcase name="testLogin_Success" classname="com.dentist.booking.RepositoryTests" time="0.018"/>
-  <testcase name="testLogin_InvalidCredentials" classname="com.dentist.booking.RepositoryTests" time="0.005"/>
-  <testcase name="testRegisterCustomer_ExistingRelation_ThrowsException" classname="com.dentist.booking.RepositoryTests" time="0.002"/>
-  <testcase name="testCreateTreatmentAndCompleteBooking" classname="com.dentist.booking.RepositoryTests" time="0.01"/>
-  <testcase name="testRegisterCustomer_ExistingUser_CreatesRelationOnly" classname="com.dentist.booking.RepositoryTests" time="0.003"/>
-  <testcase name="testAppUpdateVersionComparison" classname="com.dentist.booking.RepositoryTests" time="0.002"/>
+  <testcase name="testLogin_InvalidCredentials" classname="com.dentist.booking.RepositoryTests" time="0.002"/>
+  <testcase name="testRegisterCustomer_ExistingRelation_ThrowsException" classname="com.dentist.booking.RepositoryTests" time="0.001"/>
+  <testcase name="testCreateTreatmentAndCompleteBooking" classname="com.dentist.booking.RepositoryTests" time="0.011"/>
+  <testcase name="testRegisterCustomer_ExistingUser_CreatesRelationOnly" classname="com.dentist.booking.RepositoryTests" time="0.002"/>
+  <testcase name="testAppUpdateVersionComparison" classname="com.dentist.booking.RepositoryTests" time="0.006"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
