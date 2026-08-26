@@ -44,8 +44,8 @@ class DentistApp : Application() {
 
         // 2. Setup Network Layer (Retrofit + OkHttp)
         // Note: Placeholders are used. The client will query these values.
-        val supabaseUrl = securePreferences.getString("SUPABASE_URL", "https://your-project.supabase.co/") ?: "https://your-project.supabase.co/"
-        val supabaseAnonKey = securePreferences.getString("SUPABASE_ANON_KEY", "your-anon-public-key") ?: "your-anon-public-key"
+        val supabaseUrl = securePreferences.getString("SUPABASE_URL", "https://tkgteipwfylirwzgoros.supabase.co/") ?: "https://tkgteipwfylirwzgoros.supabase.co/"
+        val supabaseAnonKey = securePreferences.getString("SUPABASE_ANON_KEY", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRrZ3RlaXB3ZnlsaXJ3emdvcm9zIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODc2NzM5NzksImV4cCI6MjEwMzI0OTk3OX0.owGmvxMiMFMC0jG1Xj0ehJWSkY2PDzII2fJ7_7_uEOY") ?: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRrZ3RlaXB3ZnlsaXJ3emdvcm9zIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODc2NzM5NzksImV4cCI6MjEwMzI0OTk3OX0.owGmvxMiMFMC0jG1Xj0ehJWSkY2PDzII2fJ7_7_uEOY"
 
         val authInterceptor = AuthInterceptor(securePreferences, supabaseAnonKey)
         val loggingInterceptor = HttpLoggingInterceptor().apply {
