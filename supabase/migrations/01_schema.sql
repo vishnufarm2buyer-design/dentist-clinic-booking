@@ -173,6 +173,7 @@ DECLARE
   sign_input text;
   signature bytea;
   signature_b64 text;
+  secret_bytes bytea;
 BEGIN
   header := '{"alg":"HS256","typ":"JWT"}';
   payload_str := payload::text;
@@ -181,7 +182,15 @@ BEGIN
   payload_b64 := encode_base64url(payload_str::bytea);
   
   sign_input := header_b64 || '.' || payload_b64;
-  signature := hmac(sign_input::bytea, secret::bytea, 'sha256');
+  
+  -- Try to decode secret from base64 (Supabase default). If it fails, treat it as raw text.
+  BEGIN
+    secret_bytes := decode(secret, 'base64');
+  EXCEPTION WHEN OTHERS THEN
+    secret_bytes := secret::bytea;
+  END;
+  
+  signature := hmac(sign_input::bytea, secret_bytes, 'sha256');
   signature_b64 := encode_base64url(signature);
   
   RETURN sign_input || '.' || signature_b64;
