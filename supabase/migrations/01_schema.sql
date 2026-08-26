@@ -146,7 +146,7 @@ BEGIN
   END IF;
   RETURN secret;
 END;
-$$ LANGUAGE plpgsql SECURITY DEFINER;
+$$ LANGUAGE plpgsql SECURITY DEFINER SET search_path = public;
 
 -- Base64url Encoder helper
 CREATE OR REPLACE FUNCTION encode_base64url(bin bytea) RETURNS text AS $$
