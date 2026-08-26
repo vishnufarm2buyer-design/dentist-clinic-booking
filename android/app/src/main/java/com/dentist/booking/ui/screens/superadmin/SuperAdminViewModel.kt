@@ -168,4 +168,19 @@ class SuperAdminViewModel(
             }
         }
     }
+
+    fun deleteClinic(clinicId: String) {
+        viewModelScope.launch {
+            _isLoading.value = true
+            _error.value = null
+            try {
+                clinicRepository.deleteClinic(clinicId)
+                loadClinics()
+            } catch (e: Exception) {
+                _error.value = e.message ?: "Failed to delete clinic"
+            } finally {
+                _isLoading.value = false
+            }
+        }
+    }
 }

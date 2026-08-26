@@ -71,6 +71,12 @@ class AuthRepository(
         specialization: String,
         clinicId: String
     ): String {
+        // Check if phone number already exists
+        val search = api.getUsers(phoneFilter = "eq.$phone")
+        if (search.isNotEmpty()) {
+            throw Exception("This mobile number is already registered. Please use a different number.")
+        }
+
         // Call Postgres RPC to hash password and save doctor
         val doctorId = api.createUserWithHash(
             CreateUserWithHashRequest(

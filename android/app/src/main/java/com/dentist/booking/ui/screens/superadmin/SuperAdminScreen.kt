@@ -10,6 +10,7 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material.icons.filled.ExitToApp
+import androidx.compose.material.icons.filled.Delete
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
@@ -43,6 +44,8 @@ fun SuperAdminScreen(
     var searchQuery by remember { mutableStateOf("") }
     var activeTab by remember { mutableStateOf(0) } // 0 = Dashboard, 1 = Clinics
     var showOnboardDialog by remember { mutableStateOf(false) }
+    var showDeleteConfirmation by remember { mutableStateOf(false) }
+    var clinicToDelete by remember { mutableStateOf<Clinic?>(null) }
 
     val filteredClinics = clinics.filter {
         it.name.contains(searchQuery, ignoreCase = true)
@@ -127,7 +130,11 @@ fun SuperAdminScreen(
                             searchQuery = searchQuery,
                             onSearchChange = { searchQuery = it },
                             clinics = filteredClinics,
-                            onClinicClick = { viewModel.selectClinic(it) }
+                            onClinicClick = { viewModel.selectClinic(it) },
+                            onDeleteClinicClick = {
+                                clinicToDelete = it
+                                showDeleteConfirmation = true
+                            }
                         )
                     }
                 }
@@ -162,6 +169,39 @@ fun SuperAdminScreen(
                     status = status,
                     onSuccess = { showOnboardDialog = false }
                 )
+            }
+        )
+    }
+
+    if (showDeleteConfirmation && clinicToDelete != null) {
+        AlertDialog(
+            onDismissRequest = {
+                showDeleteConfirmation = false
+                clinicToDelete = null
+            },
+            title = { Text("Delete Clinic") },
+            text = { Text("Are you sure you want to delete ${clinicToDelete?.name}? This action will permanently remove all booking histories, treatments, and records associated with this clinic. This cannot be undone.") },
+            confirmButton = {
+                Button(
+                    onClick = {
+                        clinicToDelete?.id?.let { viewModel.deleteClinic(it) }
+                        showDeleteConfirmation = false
+                        clinicToDelete = null
+                    },
+                    colors = ButtonDefaults.buttonColors(containerColor = MaterialTheme.colorScheme.error)
+                ) {
+                    Text("Delete")
+                }
+            },
+            dismissButton = {
+                TextButton(
+                    onClick = {
+                        showDeleteConfirmation = false
+                        clinicToDelete = null
+                    }
+                ) {
+                    Text("Cancel")
+                }
             }
         )
     }
@@ -227,7 +267,8 @@ fun ClinicsListView(
     searchQuery: String,
     onSearchChange: (String) -> Unit,
     clinics: List<Clinic>,
-    onClinicClick: (Clinic) -> Unit
+    onClinicClick: (Clinic) -> Unit,
+    onDeleteClinicClick: (Clinic) -> Unit
 ) {
     Column(modifier = Modifier.fillMaxSize().padding(16.dp)) {
         OutlinedTextField(
@@ -261,11 +302,25 @@ fun ClinicsListView(
                             horizontalArrangement = Arrangement.SpaceBetween,
                             verticalAlignment = Alignment.CenterVertically
                         ) {
-                            Column {
+                            Column(modifier = Modifier.weight(1f)) {
                                 Text(clinic.name, fontWeight = FontWeight.Bold, fontSize = 16.sp)
                                 Text("Plan: ${clinic.subscriptionPlan ?: "None"}", fontSize = 12.sp, color = Color.Gray)
                             }
-                            SubscriptionBadge(status = clinic.subscriptionStatus)
+                            Row(
+                                verticalAlignment = Alignment.CenterVertically,
+                                horizontalArrangement = Arrangement.spacedBy(8.dp)
+                            ) {
+                                SubscriptionBadge(status = clinic.subscriptionStatus)
+                                IconButton(
+                                    onClick = { onDeleteClinicClick(clinic) }
+                                ) {
+                                    Icon(
+                                        imageVector = Icons.Default.Delete,
+                                        contentDescription = "Delete Clinic",
+                                        tint = Color.Red
+                                    )
+                                }
+                            }
                         }
                     }
                 }
@@ -273,6 +328,7 @@ fun ClinicsListView(
         }
     }
 }
+
 
 @Composable
 fun SubscriptionBadge(status: String) {

@@ -137,6 +137,7 @@ class RepositoryTests {
         override suspend fun getClinics(select: String, idFilter: String?, order: String): List<Clinic> = emptyList()
         override suspend fun createClinic(clinic: Clinic): List<Clinic> = listOf(clinic.copy(id = "c1"))
         override suspend fun updateClinicSubscription(idFilter: String, clinicUpdateFields: Map<String, Any?>): List<Clinic> = emptyList()
+        override suspend fun deleteClinic(idFilter: String) {}
         override suspend fun getSubscriptionLogs(select: String, clinicIdFilter: String, order: String): List<SubscriptionLog> = emptyList()
         override suspend fun createSubscriptionLog(log: SubscriptionLog): List<SubscriptionLog> = listOf(log)
 

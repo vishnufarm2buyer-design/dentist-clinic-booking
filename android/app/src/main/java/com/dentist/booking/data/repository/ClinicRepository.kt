@@ -42,6 +42,12 @@ class ClinicRepository(
         status: String,
         superAdminId: String
     ): Clinic {
+        // Check if admin phone already exists
+        val search = api.getUsers(phoneFilter = "eq.$adminPhone")
+        if (search.isNotEmpty()) {
+            throw Exception("This mobile number is already registered. Please use a different number.")
+        }
+
         // 1. Create the Clinic
         val newClinic = Clinic(
             name = name,
@@ -120,5 +126,9 @@ class ClinicRepository(
     // Retrieve subscription change logs for a clinic
     suspend fun getSubscriptionHistory(clinicId: String): List<SubscriptionLog> {
         return api.getSubscriptionLogs(clinicIdFilter = "eq.$clinicId")
+    }
+
+    suspend fun deleteClinic(clinicId: String) {
+        api.deleteClinic("eq.$clinicId")
     }
 }

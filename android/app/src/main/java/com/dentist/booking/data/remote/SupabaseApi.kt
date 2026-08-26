@@ -76,6 +76,11 @@ interface SupabaseApi {
         @Body clinicUpdateFields: Map<String, @JvmSuppressWildcards Any?>
     ): List<Clinic>
 
+    @DELETE("rest/v1/clinics")
+    suspend fun deleteClinic(
+        @Query("id") idFilter: String
+    )
+
 
     // --- SUBSCRIPTION LOGS TABLE ---
 
