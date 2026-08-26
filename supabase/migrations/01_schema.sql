@@ -214,6 +214,7 @@ BEGIN
   v_expiry := extract(epoch from (now() + interval '7 days'))::integer;
   v_payload := json_build_object(
     'sub', v_user.id,
+    'aud', 'authenticated',  -- REQUIRED by Supabase PostgREST
     'role', 'authenticated', -- Allow PostgREST RLS to accept it
     'exp', v_expiry,
     'phone', v_user.phone,
