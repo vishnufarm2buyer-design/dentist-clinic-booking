@@ -9,7 +9,6 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Info
 import androidx.compose.material.icons.filled.Lock
 import androidx.compose.material.icons.filled.Phone
-import androidx.compose.material.icons.filled.Settings
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
@@ -34,7 +33,6 @@ fun LoginScreen(
     val isLoading by viewModel.isLoading.collectAsState()
     val errorMessage by viewModel.errorMessage.collectAsState()
     val loginSuccessUser by viewModel.loginSuccessUser.collectAsState()
-    val showSettings by viewModel.showSettingsDialog.collectAsState()
 
     var showResetDialog by remember { mutableStateOf(false) }
 
@@ -49,20 +47,6 @@ fun LoginScreen(
             .fillMaxSize()
             .background(MaterialTheme.colorScheme.background)
     ) {
-        // Settings Gear Icon (top right)
-        IconButton(
-            onClick = { viewModel.setShowSettingsDialog(true) },
-            modifier = Modifier
-                .align(Alignment.TopEnd)
-                .padding(16.dp)
-        ) {
-            Icon(
-                imageVector = Icons.Default.Settings,
-                contentDescription = "Server Configuration",
-                tint = MaterialTheme.colorScheme.primary
-            )
-        }
-
         Column(
             modifier = Modifier
                 .fillMaxSize()
@@ -133,12 +117,18 @@ fun LoginScreen(
             // Input Fields
             OutlinedTextField(
                 value = phone,
-                onValueChange = viewModel::onPhoneChanged,
+                onValueChange = { newValue ->
+                    // Allow only digits and limit to 10 characters
+                    val filtered = newValue.filter { it.isDigit() }
+                    if (filtered.length <= 10) {
+                        viewModel.onPhoneChanged(filtered)
+                    }
+                },
                 label = { Text("Phone Number") },
-                placeholder = { Text("+19876543210") },
+                placeholder = { Text("Enter 10-digit number") },
                 leadingIcon = { Icon(Icons.Default.Phone, contentDescription = null) },
                 singleLine = true,
-                keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Phone),
+                keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
                 modifier = Modifier.fillMaxWidth()
             )
 
@@ -185,7 +175,7 @@ fun LoginScreen(
         }
     }
 
-    // 1. Password Reset Help Dialog
+    // Password Reset Help Dialog
     if (showResetDialog) {
         AlertDialog(
             onDismissRequest = { showResetDialog = false },
@@ -199,64 +189,6 @@ fun LoginScreen(
             confirmButton = {
                 TextButton(onClick = { showResetDialog = false }) {
                     Text("Understood")
-                }
-            }
-        )
-    }
-
-    // 2. Server Configuration Dialog
-    if (showSettings) {
-        var supabaseUrlInput by remember { mutableStateOf("") }
-        var supabaseAnonKeyInput by remember { mutableStateOf("") }
-
-        LaunchedEffect(Unit) {
-            val (url, key) = viewModel.getServerConfig()
-            supabaseUrlInput = url
-            supabaseAnonKeyInput = key
-        }
-
-        AlertDialog(
-            onDismissRequest = { viewModel.setShowSettingsDialog(false) },
-            title = { Text("Supabase Configuration") },
-            text = {
-                Column {
-                    Text(
-                        "Paste your custom Supabase API credentials to link this application to your database instance.",
-                        fontSize = 12.sp,
-                        color = MaterialTheme.colorScheme.onSurfaceVariant,
-                        modifier = Modifier.padding(bottom = 16.dp)
-                    )
-                    OutlinedTextField(
-                        value = supabaseUrlInput,
-                        onValueChange = { supabaseUrlInput = it },
-                        label = { Text("Supabase URL") },
-                        singleLine = true,
-                        modifier = Modifier.fillMaxWidth()
-                    )
-                    Spacer(modifier = Modifier.height(12.dp))
-                    OutlinedTextField(
-                        value = supabaseAnonKeyInput,
-                        onValueChange = { supabaseAnonKeyInput = it },
-                        label = { Text("Supabase Anon Key") },
-                        modifier = Modifier.fillMaxWidth()
-                    )
-                }
-            },
-            confirmButton = {
-                Button(
-                    onClick = {
-                        if (supabaseUrlInput.isNotEmpty() && supabaseAnonKeyInput.isNotEmpty()) {
-                            viewModel.saveServerConfig(supabaseUrlInput.trim(), supabaseAnonKeyInput.trim())
-                            viewModel.setShowSettingsDialog(false)
-                        }
-                    }
-                ) {
-                    Text("Save Config")
-                }
-            },
-            dismissButton = {
-                TextButton(onClick = { viewModel.setShowSettingsDialog(false) }) {
-                    Text("Cancel")
                 }
             }
         )

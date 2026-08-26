@@ -33,9 +33,6 @@ class LoginViewModel(
     private val _loginSuccessUser = MutableStateFlow<User?>(null)
     val loginSuccessUser: StateFlow<User?> = _loginSuccessUser.asStateFlow()
 
-    private val _showSettingsDialog = MutableStateFlow(false)
-    val showSettingsDialog: StateFlow<Boolean> = _showSettingsDialog.asStateFlow()
-
     fun onPhoneChanged(value: String) {
         _phone.value = value
     }
@@ -44,22 +41,8 @@ class LoginViewModel(
         _password.value = value
     }
 
-    fun setShowSettingsDialog(show: Boolean) {
-        _showSettingsDialog.value = show
-    }
-
     fun clearErrorMessage() {
         _errorMessage.value = null
-    }
-
-    fun getServerConfig(): Pair<String, String> {
-        val url = sharedPreferences.getString("SUPABASE_URL", "https://your-project.supabase.co/") ?: "https://your-project.supabase.co/"
-        val key = sharedPreferences.getString("SUPABASE_ANON_KEY", "your-anon-public-key") ?: "your-anon-public-key"
-        return Pair(url, key)
-    }
-
-    fun saveServerConfig(url: String, anonKey: String) {
-        DentistApp.instance.updateSupabaseConfig(url, anonKey)
     }
 
     fun login() {
@@ -68,12 +51,21 @@ class LoginViewModel(
             return
         }
 
+        var inputPhone = _phone.value.trim()
+        if (inputPhone.length == 10 && inputPhone.all { it.isDigit() }) {
+            inputPhone = if (inputPhone == "1111111111") {
+                "+1111111111"
+            } else {
+                "+91$inputPhone"
+            }
+        }
+
         viewModelScope.launch {
             _isLoading.value = true
             _errorMessage.value = null
             try {
                 // Perform custom authentication
-                val user = authRepository.login(_phone.value.trim(), _password.value)
+                val user = authRepository.login(inputPhone, _password.value)
                 
                 // Fetch cached FCM push token and register it for the user
                 val token = sharedPreferences.getString("FCM_TOKEN", null)

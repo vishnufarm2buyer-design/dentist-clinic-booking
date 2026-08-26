@@ -122,12 +122,26 @@ CREATE INDEX idx_device_tokens_user_id ON device_tokens(user_id);
 -- 4. Custom JWT Helpers and Password Verification
 
 -- Retreive Supabase JWT Secret dynamically or fall back
+-- App settings configuration (highly secure, only readable inside database)
+CREATE TABLE app_settings (
+  key TEXT PRIMARY KEY,
+  value TEXT NOT NULL
+);
+ALTER TABLE app_settings ENABLE ROW LEVEL SECURITY;
+-- No public RLS policies are defined, meaning this table is completely hidden from REST API queries.
+
 CREATE OR REPLACE FUNCTION get_jwt_secret() RETURNS text AS $$
 DECLARE
   secret text;
 BEGIN
-  secret := current_setting('app.settings.jwt_secret', true);
+  -- Read from app_settings
+  SELECT value INTO secret FROM app_settings WHERE key = 'jwt_secret';
   IF secret IS NULL OR secret = '' THEN
+    -- Fallback to Supabase environment setting
+    secret := current_setting('app.settings.jwt_secret', true);
+  END IF;
+  IF secret IS NULL OR secret = '' THEN
+    -- Fallback to default
     secret := 'super-secret-jwt-token-with-at-least-32-characters-long';
   END IF;
   RETURN secret;
