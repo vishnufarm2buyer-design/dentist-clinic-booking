@@ -1,0 +1,305 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.dentist.booking"
+4    android:versionCode="1"
+5    android:versionName="1.0.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="26"
+9        android:targetSdkVersion="34" />
+10
+11    <!-- Permissions -->
+12    <uses-permission android:name="android.permission.INTERNET" />
+12-->D:\PROJECT\DENTIST\android\app\src\main\AndroidManifest.xml:6:5-67
+12-->D:\PROJECT\DENTIST\android\app\src\main\AndroidManifest.xml:6:22-64
+13    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+13-->D:\PROJECT\DENTIST\android\app\src\main\AndroidManifest.xml:7:5-79
+13-->D:\PROJECT\DENTIST\android\app\src\main\AndroidManifest.xml:7:22-76
+14    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+14-->D:\PROJECT\DENTIST\android\app\src\main\AndroidManifest.xml:8:5-77
+14-->D:\PROJECT\DENTIST\android\app\src\main\AndroidManifest.xml:8:22-74
+15    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+15-->D:\PROJECT\DENTIST\android\app\src\main\AndroidManifest.xml:9:5-83
+15-->D:\PROJECT\DENTIST\android\app\src\main\AndroidManifest.xml:9:22-80
+16    <uses-permission android:name="android.permission.WAKE_LOCK" /> <!-- Required by older versions of Google Play services to create IID tokens -->
+16-->[com.google.firebase:firebase-messaging:23.2.0] C:\Users\vishn\.gradle\caches\transforms-3\b941c62092d9ce76101460bc2ab36846\transformed\jetified-firebase-messaging-23.2.0\AndroidManifest.xml:26:5-68
+16-->[com.google.firebase:firebase-messaging:23.2.0] C:\Users\vishn\.gradle\caches\transforms-3\b941c62092d9ce76101460bc2ab36846\transformed\jetified-firebase-messaging-23.2.0\AndroidManifest.xml:26:22-65
+17    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+17-->[com.google.firebase:firebase-messaging:23.2.0] C:\Users\vishn\.gradle\caches\transforms-3\b941c62092d9ce76101460bc2ab36846\transformed\jetified-firebase-messaging-23.2.0\AndroidManifest.xml:28:5-82
+17-->[com.google.firebase:firebase-messaging:23.2.0] C:\Users\vishn\.gradle\caches\transforms-3\b941c62092d9ce76101460bc2ab36846\transformed\jetified-firebase-messaging-23.2.0\AndroidManifest.xml:28:22-79
+18
+19    <permission
+19-->[androidx.core:core:1.10.1] C:\Users\vishn\.gradle\caches\transforms-3\8f51b4a61875dd933121279f89394689\transformed\core-1.10.1\AndroidManifest.xml:22:5-24:47
+20        android:name="com.dentist.booking.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+20-->[androidx.core:core:1.10.1] C:\Users\vishn\.gradle\caches\transforms-3\8f51b4a61875dd933121279f89394689\transformed\core-1.10.1\AndroidManifest.xml:23:9-81
+21        android:protectionLevel="signature" />
+21-->[androidx.core:core:1.10.1] C:\Users\vishn\.gradle\caches\transforms-3\8f51b4a61875dd933121279f89394689\transformed\core-1.10.1\AndroidManifest.xml:24:9-44
+22
+23    <uses-permission android:name="com.dentist.booking.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+23-->[androidx.core:core:1.10.1] C:\Users\vishn\.gradle\caches\transforms-3\8f51b4a61875dd933121279f89394689\transformed\core-1.10.1\AndroidManifest.xml:26:5-97
+23-->[androidx.core:core:1.10.1] C:\Users\vishn\.gradle\caches\transforms-3\8f51b4a61875dd933121279f89394689\transformed\core-1.10.1\AndroidManifest.xml:26:22-94
+24
+25    <application
+25-->D:\PROJECT\DENTIST\android\app\src\main\AndroidManifest.xml:11:5-53:19
+26        android:name="com.dentist.booking.DentistApp"
+26-->D:\PROJECT\DENTIST\android\app\src\main\AndroidManifest.xml:12:9-35
+27        android:allowBackup="true"
+27-->D:\PROJECT\DENTIST\android\app\src\main\AndroidManifest.xml:13:9-35
+28        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+28-->[androidx.core:core:1.10.1] C:\Users\vishn\.gradle\caches\transforms-3\8f51b4a61875dd933121279f89394689\transformed\core-1.10.1\AndroidManifest.xml:28:18-86
+29        android:dataExtractionRules="@xml/data_extraction_rules"
+29-->D:\PROJECT\DENTIST\android\app\src\main\AndroidManifest.xml:14:9-65
+30        android:extractNativeLibs="false"
+31        android:fullBackupContent="@xml/backup_rules"
+31-->D:\PROJECT\DENTIST\android\app\src\main\AndroidManifest.xml:15:9-54
+32        android:icon="@mipmap/ic_launcher"
+32-->D:\PROJECT\DENTIST\android\app\src\main\AndroidManifest.xml:16:9-43
+33        android:label="@string/app_name"
+33-->D:\PROJECT\DENTIST\android\app\src\main\AndroidManifest.xml:17:9-41
+34        android:roundIcon="@mipmap/ic_launcher_round"
+34-->D:\PROJECT\DENTIST\android\app\src\main\AndroidManifest.xml:18:9-54
+35        android:supportsRtl="true"
+35-->D:\PROJECT\DENTIST\android\app\src\main\AndroidManifest.xml:19:9-35
+36        android:theme="@style/Theme.DentistBooking" >
+36-->D:\PROJECT\DENTIST\android\app\src\main\AndroidManifest.xml:20:9-52
+37        <activity
+37-->D:\PROJECT\DENTIST\android\app\src\main\AndroidManifest.xml:23:9-31:20
+38            android:name="com.dentist.booking.MainActivity"
+38-->D:\PROJECT\DENTIST\android\app\src\main\AndroidManifest.xml:24:13-41
+39            android:exported="true"
+39-->D:\PROJECT\DENTIST\android\app\src\main\AndroidManifest.xml:25:13-36
+40            android:theme="@style/Theme.DentistBooking" >
+40-->D:\PROJECT\DENTIST\android\app\src\main\AndroidManifest.xml:26:13-56
+41            <intent-filter>
+41-->D:\PROJECT\DENTIST\android\app\src\main\AndroidManifest.xml:27:13-30:29
+42                <action android:name="android.intent.action.MAIN" />
+42-->D:\PROJECT\DENTIST\android\app\src\main\AndroidManifest.xml:28:17-69
+42-->D:\PROJECT\DENTIST\android\app\src\main\AndroidManifest.xml:28:25-66
+43
+44                <category android:name="android.intent.category.LAUNCHER" />
+44-->D:\PROJECT\DENTIST\android\app\src\main\AndroidManifest.xml:29:17-77
+44-->D:\PROJECT\DENTIST\android\app\src\main\AndroidManifest.xml:29:27-74
+45            </intent-filter>
+46        </activity>
+47
+48        <!-- Firebase Cloud Messaging Receiver Service -->
+49        <service
+49-->D:\PROJECT\DENTIST\android\app\src\main\AndroidManifest.xml:34:9-40:19
+50            android:name="com.dentist.booking.service.FCMService"
+50-->D:\PROJECT\DENTIST\android\app\src\main\AndroidManifest.xml:35:13-47
+51            android:exported="false" >
+51-->D:\PROJECT\DENTIST\android\app\src\main\AndroidManifest.xml:36:13-37
+52            <intent-filter>
+52-->D:\PROJECT\DENTIST\android\app\src\main\AndroidManifest.xml:37:13-39:29
+53                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+53-->D:\PROJECT\DENTIST\android\app\src\main\AndroidManifest.xml:38:17-78
+53-->D:\PROJECT\DENTIST\android\app\src\main\AndroidManifest.xml:38:25-75
+54            </intent-filter>
+55        </service>
+56
+57        <!-- File Provider to securely share downloaded APK files with Package Installer -->
+58        <provider
+58-->D:\PROJECT\DENTIST\android\app\src\main\AndroidManifest.xml:43:9-51:20
+59            android:name="androidx.core.content.FileProvider"
+59-->D:\PROJECT\DENTIST\android\app\src\main\AndroidManifest.xml:44:13-62
+60            android:authorities="com.dentist.booking.fileprovider"
+60-->D:\PROJECT\DENTIST\android\app\src\main\AndroidManifest.xml:45:13-67
+61            android:exported="false"
+61-->D:\PROJECT\DENTIST\android\app\src\main\AndroidManifest.xml:46:13-37
+62            android:grantUriPermissions="true" >
+62-->D:\PROJECT\DENTIST\android\app\src\main\AndroidManifest.xml:47:13-47
+63            <meta-data
+63-->D:\PROJECT\DENTIST\android\app\src\main\AndroidManifest.xml:48:13-50:54
+64                android:name="android.support.FILE_PROVIDER_PATHS"
+64-->D:\PROJECT\DENTIST\android\app\src\main\AndroidManifest.xml:49:17-67
+65                android:resource="@xml/file_paths" />
+65-->D:\PROJECT\DENTIST\android\app\src\main\AndroidManifest.xml:50:17-51
+66        </provider>
+67        <provider
+67-->[androidx.emoji2:emoji2:1.3.0] C:\Users\vishn\.gradle\caches\transforms-3\79f99603a5bd8219663a7948c307eb6e\transformed\jetified-emoji2-1.3.0\AndroidManifest.xml:24:9-32:20
+68            android:name="androidx.startup.InitializationProvider"
+68-->[androidx.emoji2:emoji2:1.3.0] C:\Users\vishn\.gradle\caches\transforms-3\79f99603a5bd8219663a7948c307eb6e\transformed\jetified-emoji2-1.3.0\AndroidManifest.xml:25:13-67
+69            android:authorities="com.dentist.booking.androidx-startup"
+69-->[androidx.emoji2:emoji2:1.3.0] C:\Users\vishn\.gradle\caches\transforms-3\79f99603a5bd8219663a7948c307eb6e\transformed\jetified-emoji2-1.3.0\AndroidManifest.xml:26:13-68
+70            android:exported="false" >
+70-->[androidx.emoji2:emoji2:1.3.0] C:\Users\vishn\.gradle\caches\transforms-3\79f99603a5bd8219663a7948c307eb6e\transformed\jetified-emoji2-1.3.0\AndroidManifest.xml:27:13-37
+71            <meta-data
+71-->[androidx.emoji2:emoji2:1.3.0] C:\Users\vishn\.gradle\caches\transforms-3\79f99603a5bd8219663a7948c307eb6e\transformed\jetified-emoji2-1.3.0\AndroidManifest.xml:29:13-31:52
+72                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+72-->[androidx.emoji2:emoji2:1.3.0] C:\Users\vishn\.gradle\caches\transforms-3\79f99603a5bd8219663a7948c307eb6e\transformed\jetified-emoji2-1.3.0\AndroidManifest.xml:30:17-75
+73                android:value="androidx.startup" />
+73-->[androidx.emoji2:emoji2:1.3.0] C:\Users\vishn\.gradle\caches\transforms-3\79f99603a5bd8219663a7948c307eb6e\transformed\jetified-emoji2-1.3.0\AndroidManifest.xml:31:17-49
+74            <meta-data
+74-->[androidx.lifecycle:lifecycle-process:2.6.1] C:\Users\vishn\.gradle\caches\transforms-3\47325d95c8419e3a52fb901b36648601\transformed\jetified-lifecycle-process-2.6.1\AndroidManifest.xml:29:13-31:52
+75                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+75-->[androidx.lifecycle:lifecycle-process:2.6.1] C:\Users\vishn\.gradle\caches\transforms-3\47325d95c8419e3a52fb901b36648601\transformed\jetified-lifecycle-process-2.6.1\AndroidManifest.xml:30:17-78
+76                android:value="androidx.startup" />
+76-->[androidx.lifecycle:lifecycle-process:2.6.1] C:\Users\vishn\.gradle\caches\transforms-3\47325d95c8419e3a52fb901b36648601\transformed\jetified-lifecycle-process-2.6.1\AndroidManifest.xml:31:17-49
+77            <meta-data
+77-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\vishn\.gradle\caches\transforms-3\d1c94491c846188cc065b0ac90f99b64\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:29:13-31:52
+78                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+78-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\vishn\.gradle\caches\transforms-3\d1c94491c846188cc065b0ac90f99b64\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:30:17-85
+79                android:value="androidx.startup" />
+79-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\vishn\.gradle\caches\transforms-3\d1c94491c846188cc065b0ac90f99b64\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:31:17-49
+80        </provider>
+81
+82        <receiver
+82-->[com.google.firebase:firebase-messaging:23.2.0] C:\Users\vishn\.gradle\caches\transforms-3\b941c62092d9ce76101460bc2ab36846\transformed\jetified-firebase-messaging-23.2.0\AndroidManifest.xml:31:9-38:20
+83            android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver"
+83-->[com.google.firebase:firebase-messaging:23.2.0] C:\Users\vishn\.gradle\caches\transforms-3\b941c62092d9ce76101460bc2ab36846\transformed\jetified-firebase-messaging-23.2.0\AndroidManifest.xml:32:13-78
+84            android:exported="true"
+84-->[com.google.firebase:firebase-messaging:23.2.0] C:\Users\vishn\.gradle\caches\transforms-3\b941c62092d9ce76101460bc2ab36846\transformed\jetified-firebase-messaging-23.2.0\AndroidManifest.xml:33:13-36
+85            android:permission="com.google.android.c2dm.permission.SEND" >
+85-->[com.google.firebase:firebase-messaging:23.2.0] C:\Users\vishn\.gradle\caches\transforms-3\b941c62092d9ce76101460bc2ab36846\transformed\jetified-firebase-messaging-23.2.0\AndroidManifest.xml:34:13-73
+86            <intent-filter>
+86-->[com.google.firebase:firebase-messaging:23.2.0] C:\Users\vishn\.gradle\caches\transforms-3\b941c62092d9ce76101460bc2ab36846\transformed\jetified-firebase-messaging-23.2.0\AndroidManifest.xml:35:13-37:29
+87                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+87-->[com.google.firebase:firebase-messaging:23.2.0] C:\Users\vishn\.gradle\caches\transforms-3\b941c62092d9ce76101460bc2ab36846\transformed\jetified-firebase-messaging-23.2.0\AndroidManifest.xml:36:17-81
+87-->[com.google.firebase:firebase-messaging:23.2.0] C:\Users\vishn\.gradle\caches\transforms-3\b941c62092d9ce76101460bc2ab36846\transformed\jetified-firebase-messaging-23.2.0\AndroidManifest.xml:36:25-78
+88            </intent-filter>
+89        </receiver>
+90        <!--
+91             FirebaseMessagingService performs security checks at runtime,
+92             but set to not exported to explicitly avoid allowing another app to call it.
+93        -->
+94        <service
+94-->[com.google.firebase:firebase-messaging:23.2.0] C:\Users\vishn\.gradle\caches\transforms-3\b941c62092d9ce76101460bc2ab36846\transformed\jetified-firebase-messaging-23.2.0\AndroidManifest.xml:44:9-51:19
+95            android:name="com.google.firebase.messaging.FirebaseMessagingService"
+95-->[com.google.firebase:firebase-messaging:23.2.0] C:\Users\vishn\.gradle\caches\transforms-3\b941c62092d9ce76101460bc2ab36846\transformed\jetified-firebase-messaging-23.2.0\AndroidManifest.xml:45:13-82
+96            android:directBootAware="true"
+96-->[com.google.firebase:firebase-messaging:23.2.0] C:\Users\vishn\.gradle\caches\transforms-3\b941c62092d9ce76101460bc2ab36846\transformed\jetified-firebase-messaging-23.2.0\AndroidManifest.xml:46:13-43
+97            android:exported="false" >
+97-->[com.google.firebase:firebase-messaging:23.2.0] C:\Users\vishn\.gradle\caches\transforms-3\b941c62092d9ce76101460bc2ab36846\transformed\jetified-firebase-messaging-23.2.0\AndroidManifest.xml:47:13-37
+98            <intent-filter android:priority="-500" >
+98-->D:\PROJECT\DENTIST\android\app\src\main\AndroidManifest.xml:37:13-39:29
+99                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+99-->D:\PROJECT\DENTIST\android\app\src\main\AndroidManifest.xml:38:17-78
+99-->D:\PROJECT\DENTIST\android\app\src\main\AndroidManifest.xml:38:25-75
+100            </intent-filter>
+101        </service>
+102        <service
+102-->[com.google.firebase:firebase-messaging:23.2.0] C:\Users\vishn\.gradle\caches\transforms-3\b941c62092d9ce76101460bc2ab36846\transformed\jetified-firebase-messaging-23.2.0\AndroidManifest.xml:52:9-58:19
+103            android:name="com.google.firebase.components.ComponentDiscoveryService"
+103-->[com.google.firebase:firebase-messaging:23.2.0] C:\Users\vishn\.gradle\caches\transforms-3\b941c62092d9ce76101460bc2ab36846\transformed\jetified-firebase-messaging-23.2.0\AndroidManifest.xml:53:13-84
+104            android:directBootAware="true"
+104-->[com.google.firebase:firebase-common:20.3.3] C:\Users\vishn\.gradle\caches\transforms-3\5c2c860a52a17ac415be017ad62ace25\transformed\jetified-firebase-common-20.3.3\AndroidManifest.xml:34:13-43
+105            android:exported="false" >
+105-->[com.google.firebase:firebase-messaging:23.2.0] C:\Users\vishn\.gradle\caches\transforms-3\b941c62092d9ce76101460bc2ab36846\transformed\jetified-firebase-messaging-23.2.0\AndroidManifest.xml:54:13-37
+106            <meta-data
+106-->[com.google.firebase:firebase-messaging:23.2.0] C:\Users\vishn\.gradle\caches\transforms-3\b941c62092d9ce76101460bc2ab36846\transformed\jetified-firebase-messaging-23.2.0\AndroidManifest.xml:55:13-57:85
+107                android:name="com.google.firebase.components:com.google.firebase.messaging.FirebaseMessagingRegistrar"
+107-->[com.google.firebase:firebase-messaging:23.2.0] C:\Users\vishn\.gradle\caches\transforms-3\b941c62092d9ce76101460bc2ab36846\transformed\jetified-firebase-messaging-23.2.0\AndroidManifest.xml:56:17-119
+108                android:value="com.google.firebase.components.ComponentRegistrar" />
+108-->[com.google.firebase:firebase-messaging:23.2.0] C:\Users\vishn\.gradle\caches\transforms-3\b941c62092d9ce76101460bc2ab36846\transformed\jetified-firebase-messaging-23.2.0\AndroidManifest.xml:57:17-82
+109            <meta-data
+109-->[com.google.firebase:firebase-datatransport:18.1.7] C:\Users\vishn\.gradle\caches\transforms-3\d1843a9e5f461478d1e60425f8ebe49d\transformed\jetified-firebase-datatransport-18.1.7\AndroidManifest.xml:27:13-29:85
+110                android:name="com.google.firebase.components:com.google.firebase.datatransport.TransportRegistrar"
+110-->[com.google.firebase:firebase-datatransport:18.1.7] C:\Users\vishn\.gradle\caches\transforms-3\d1843a9e5f461478d1e60425f8ebe49d\transformed\jetified-firebase-datatransport-18.1.7\AndroidManifest.xml:28:17-115
+111                android:value="com.google.firebase.components.ComponentRegistrar" />
+111-->[com.google.firebase:firebase-datatransport:18.1.7] C:\Users\vishn\.gradle\caches\transforms-3\d1843a9e5f461478d1e60425f8ebe49d\transformed\jetified-firebase-datatransport-18.1.7\AndroidManifest.xml:29:17-82
+112            <meta-data
+112-->[com.google.firebase:firebase-installations:17.1.3] C:\Users\vishn\.gradle\caches\transforms-3\da657837279072abc2c8cfd78efe324f\transformed\jetified-firebase-installations-17.1.3\AndroidManifest.xml:17:13-19:85
+113                android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar"
+113-->[com.google.firebase:firebase-installations:17.1.3] C:\Users\vishn\.gradle\caches\transforms-3\da657837279072abc2c8cfd78efe324f\transformed\jetified-firebase-installations-17.1.3\AndroidManifest.xml:18:17-127
+114                android:value="com.google.firebase.components.ComponentRegistrar" />
+114-->[com.google.firebase:firebase-installations:17.1.3] C:\Users\vishn\.gradle\caches\transforms-3\da657837279072abc2c8cfd78efe324f\transformed\jetified-firebase-installations-17.1.3\AndroidManifest.xml:19:17-82
+115        </service>
+116
+117        <activity
+117-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\vishn\.gradle\caches\transforms-3\abd2feb31145d5e148bca63c6ba4a4b2\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:20:9-22:45
+118            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+118-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\vishn\.gradle\caches\transforms-3\abd2feb31145d5e148bca63c6ba4a4b2\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:20:19-85
+119            android:exported="false"
+119-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\vishn\.gradle\caches\transforms-3\abd2feb31145d5e148bca63c6ba4a4b2\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:22:19-43
+120            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+120-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\vishn\.gradle\caches\transforms-3\abd2feb31145d5e148bca63c6ba4a4b2\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:21:19-78
+121
+122        <provider
+122-->[com.google.firebase:firebase-common:20.3.3] C:\Users\vishn\.gradle\caches\transforms-3\5c2c860a52a17ac415be017ad62ace25\transformed\jetified-firebase-common-20.3.3\AndroidManifest.xml:25:9-30:39
+123            android:name="com.google.firebase.provider.FirebaseInitProvider"
+123-->[com.google.firebase:firebase-common:20.3.3] C:\Users\vishn\.gradle\caches\transforms-3\5c2c860a52a17ac415be017ad62ace25\transformed\jetified-firebase-common-20.3.3\AndroidManifest.xml:26:13-77
+124            android:authorities="com.dentist.booking.firebaseinitprovider"
+124-->[com.google.firebase:firebase-common:20.3.3] C:\Users\vishn\.gradle\caches\transforms-3\5c2c860a52a17ac415be017ad62ace25\transformed\jetified-firebase-common-20.3.3\AndroidManifest.xml:27:13-72
+125            android:directBootAware="true"
+125-->[com.google.firebase:firebase-common:20.3.3] C:\Users\vishn\.gradle\caches\transforms-3\5c2c860a52a17ac415be017ad62ace25\transformed\jetified-firebase-common-20.3.3\AndroidManifest.xml:28:13-43
+126            android:exported="false"
+126-->[com.google.firebase:firebase-common:20.3.3] C:\Users\vishn\.gradle\caches\transforms-3\5c2c860a52a17ac415be017ad62ace25\transformed\jetified-firebase-common-20.3.3\AndroidManifest.xml:29:13-37
+127            android:initOrder="100" />
+127-->[com.google.firebase:firebase-common:20.3.3] C:\Users\vishn\.gradle\caches\transforms-3\5c2c860a52a17ac415be017ad62ace25\transformed\jetified-firebase-common-20.3.3\AndroidManifest.xml:30:13-36
+128
+129        <meta-data
+129-->[com.google.android.gms:play-services-basement:18.1.0] C:\Users\vishn\.gradle\caches\transforms-3\da06b8bb177529c69585ca789be4271e\transformed\jetified-play-services-basement-18.1.0\AndroidManifest.xml:21:9-23:69
+130            android:name="com.google.android.gms.version"
+130-->[com.google.android.gms:play-services-basement:18.1.0] C:\Users\vishn\.gradle\caches\transforms-3\da06b8bb177529c69585ca789be4271e\transformed\jetified-play-services-basement-18.1.0\AndroidManifest.xml:22:13-58
+131            android:value="@integer/google_play_services_version" />
+131-->[com.google.android.gms:play-services-basement:18.1.0] C:\Users\vishn\.gradle\caches\transforms-3\da06b8bb177529c69585ca789be4271e\transformed\jetified-play-services-basement-18.1.0\AndroidManifest.xml:23:13-66
+132
+133        <service
+133-->[com.google.android.datatransport:transport-backend-cct:3.1.8] C:\Users\vishn\.gradle\caches\transforms-3\6a6e086b8338bc8ac9bd86f35152d3fd\transformed\jetified-transport-backend-cct-3.1.8\AndroidManifest.xml:28:9-34:19
+134            android:name="com.google.android.datatransport.runtime.backends.TransportBackendDiscovery"
+134-->[com.google.android.datatransport:transport-backend-cct:3.1.8] C:\Users\vishn\.gradle\caches\transforms-3\6a6e086b8338bc8ac9bd86f35152d3fd\transformed\jetified-transport-backend-cct-3.1.8\AndroidManifest.xml:29:13-103
+135            android:exported="false" >
+135-->[com.google.android.datatransport:transport-backend-cct:3.1.8] C:\Users\vishn\.gradle\caches\transforms-3\6a6e086b8338bc8ac9bd86f35152d3fd\transformed\jetified-transport-backend-cct-3.1.8\AndroidManifest.xml:30:13-37
+136            <meta-data
+136-->[com.google.android.datatransport:transport-backend-cct:3.1.8] C:\Users\vishn\.gradle\caches\transforms-3\6a6e086b8338bc8ac9bd86f35152d3fd\transformed\jetified-transport-backend-cct-3.1.8\AndroidManifest.xml:31:13-33:39
+137                android:name="backend:com.google.android.datatransport.cct.CctBackendFactory"
+137-->[com.google.android.datatransport:transport-backend-cct:3.1.8] C:\Users\vishn\.gradle\caches\transforms-3\6a6e086b8338bc8ac9bd86f35152d3fd\transformed\jetified-transport-backend-cct-3.1.8\AndroidManifest.xml:32:17-94
+138                android:value="cct" />
+138-->[com.google.android.datatransport:transport-backend-cct:3.1.8] C:\Users\vishn\.gradle\caches\transforms-3\6a6e086b8338bc8ac9bd86f35152d3fd\transformed\jetified-transport-backend-cct-3.1.8\AndroidManifest.xml:33:17-36
+139        </service>
+140        <service
+140-->[com.google.android.datatransport:transport-runtime:3.1.8] C:\Users\vishn\.gradle\caches\transforms-3\6e67828f38950f7c51f1e7e9e4a79c5f\transformed\jetified-transport-runtime-3.1.8\AndroidManifest.xml:26:9-30:19
+141            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService"
+141-->[com.google.android.datatransport:transport-runtime:3.1.8] C:\Users\vishn\.gradle\caches\transforms-3\6e67828f38950f7c51f1e7e9e4a79c5f\transformed\jetified-transport-runtime-3.1.8\AndroidManifest.xml:27:13-117
+142            android:exported="false"
+142-->[com.google.android.datatransport:transport-runtime:3.1.8] C:\Users\vishn\.gradle\caches\transforms-3\6e67828f38950f7c51f1e7e9e4a79c5f\transformed\jetified-transport-runtime-3.1.8\AndroidManifest.xml:28:13-37
+143            android:permission="android.permission.BIND_JOB_SERVICE" >
+143-->[com.google.android.datatransport:transport-runtime:3.1.8] C:\Users\vishn\.gradle\caches\transforms-3\6e67828f38950f7c51f1e7e9e4a79c5f\transformed\jetified-transport-runtime-3.1.8\AndroidManifest.xml:29:13-69
+144        </service>
+145
+146        <receiver
+146-->[com.google.android.datatransport:transport-runtime:3.1.8] C:\Users\vishn\.gradle\caches\transforms-3\6e67828f38950f7c51f1e7e9e4a79c5f\transformed\jetified-transport-runtime-3.1.8\AndroidManifest.xml:32:9-34:40
+147            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver"
+147-->[com.google.android.datatransport:transport-runtime:3.1.8] C:\Users\vishn\.gradle\caches\transforms-3\6e67828f38950f7c51f1e7e9e4a79c5f\transformed\jetified-transport-runtime-3.1.8\AndroidManifest.xml:33:13-132
+148            android:exported="false" />
+148-->[com.google.android.datatransport:transport-runtime:3.1.8] C:\Users\vishn\.gradle\caches\transforms-3\6e67828f38950f7c51f1e7e9e4a79c5f\transformed\jetified-transport-runtime-3.1.8\AndroidManifest.xml:34:13-37
+149        <receiver
+149-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\vishn\.gradle\caches\transforms-3\d1c94491c846188cc065b0ac90f99b64\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:34:9-52:20
+150            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+150-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\vishn\.gradle\caches\transforms-3\d1c94491c846188cc065b0ac90f99b64\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:35:13-76
+151            android:directBootAware="false"
+151-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\vishn\.gradle\caches\transforms-3\d1c94491c846188cc065b0ac90f99b64\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:36:13-44
+152            android:enabled="true"
+152-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\vishn\.gradle\caches\transforms-3\d1c94491c846188cc065b0ac90f99b64\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:37:13-35
+153            android:exported="true"
+153-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\vishn\.gradle\caches\transforms-3\d1c94491c846188cc065b0ac90f99b64\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:38:13-36
+154            android:permission="android.permission.DUMP" >
+154-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\vishn\.gradle\caches\transforms-3\d1c94491c846188cc065b0ac90f99b64\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:39:13-57
+155            <intent-filter>
+155-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\vishn\.gradle\caches\transforms-3\d1c94491c846188cc065b0ac90f99b64\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:40:13-42:29
+156                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+156-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\vishn\.gradle\caches\transforms-3\d1c94491c846188cc065b0ac90f99b64\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:41:17-91
+156-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\vishn\.gradle\caches\transforms-3\d1c94491c846188cc065b0ac90f99b64\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:41:25-88
+157            </intent-filter>
+158            <intent-filter>
+158-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\vishn\.gradle\caches\transforms-3\d1c94491c846188cc065b0ac90f99b64\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:43:13-45:29
+159                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+159-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\vishn\.gradle\caches\transforms-3\d1c94491c846188cc065b0ac90f99b64\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:44:17-85
+159-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\vishn\.gradle\caches\transforms-3\d1c94491c846188cc065b0ac90f99b64\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:44:25-82
+160            </intent-filter>
+161            <intent-filter>
+161-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\vishn\.gradle\caches\transforms-3\d1c94491c846188cc065b0ac90f99b64\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:46:13-48:29
+162                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+162-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\vishn\.gradle\caches\transforms-3\d1c94491c846188cc065b0ac90f99b64\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:47:17-88
+162-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\vishn\.gradle\caches\transforms-3\d1c94491c846188cc065b0ac90f99b64\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:47:25-85
+163            </intent-filter>
+164            <intent-filter>
+164-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\vishn\.gradle\caches\transforms-3\d1c94491c846188cc065b0ac90f99b64\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:49:13-51:29
+165                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+165-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\vishn\.gradle\caches\transforms-3\d1c94491c846188cc065b0ac90f99b64\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:50:17-95
+165-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\vishn\.gradle\caches\transforms-3\d1c94491c846188cc065b0ac90f99b64\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:50:25-92
+166            </intent-filter>
+167        </receiver>
+168    </application>
+169
+170</manifest>

@@ -26,6 +26,7 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import androidx.compose.ui.unit.sp
 import com.dentist.booking.data.model.AppVersion
 import com.dentist.booking.ui.screens.clinicadmin.ClinicAdminScreen
 import com.dentist.booking.ui.screens.clinicadmin.ClinicAdminViewModel

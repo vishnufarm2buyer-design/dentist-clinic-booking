@@ -117,6 +117,10 @@ class RepositoryTests {
         }
 
         override suspend fun updatePassword(idFilter: String, request: UpdatePasswordRequest): List<User> = emptyList()
+
+        override suspend fun changePassword(request: Map<String, String>): Boolean = true
+
+        override suspend fun adminResetPassword(request: Map<String, String>): Boolean = true
         
         override suspend fun updateProfile(idFilter: String, request: UpdateProfileRequest): List<User> {
             val id = idFilter.replace("eq.", "")

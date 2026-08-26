@@ -113,7 +113,7 @@ class AuthRepository(
                     p_password = passwordPlain,
                     p_name = name,
                     p_role = "customer",
-                    p_clinic_id = null -- Customers have NULL clinic_id (connected via clinic_customers)
+                    p_clinic_id = null // Customers have NULL clinic_id (connected via clinic_customers)
                 )
             )
             val newUserId = result.firstOrNull() ?: throw Exception("Failed to retrieve created customer ID")

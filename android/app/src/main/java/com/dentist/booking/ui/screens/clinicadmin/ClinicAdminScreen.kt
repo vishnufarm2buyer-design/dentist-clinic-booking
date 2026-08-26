@@ -20,8 +20,10 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.dentist.booking.data.model.Booking
+import com.dentist.booking.data.model.Clinic
 import com.dentist.booking.data.model.User
 import com.dentist.booking.ui.screens.superadmin.SubscriptionBadge
+import com.dentist.booking.ui.screens.superadmin.StatCard
 import com.dentist.booking.util.DocumentGenerator
 
 @OptIn(ExperimentalMaterial3Api::class)
